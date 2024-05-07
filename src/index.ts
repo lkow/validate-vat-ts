@@ -1,4 +1,4 @@
-
+import fetch from 'cross-fetch';
 
 export interface ViesValidationResponse {
   countryCode: string;

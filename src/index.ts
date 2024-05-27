@@ -1,4 +1,4 @@
-import * as fetch from "isomorphic-fetch";
+import fetch from 'cross-fetch';
 
 export interface ViesValidationResponse {
   countryCode: string;
@@ -163,17 +163,17 @@ const validateVat = async (
     .replace("_vat_number_placeholder_", vatNumber)
     .replace("\n", "")
     .trim();
-
   const response = await fetch(serviceUrl, {
     headers,
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
     credentials: "same-origin", // include, *same-origin, omit
     body: xml // body data type must match "Content-Type" header
+  }).catch((error) => {
+    throw new Error(error.message, {cause: error});
   });
 
-  return parseSoapResponse(await response.text());
+  return parseSoapResponse(await response.text());  
 };
 
 export default validateVat;

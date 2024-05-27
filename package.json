@@ -5,15 +5,17 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "isomorphic-fetch": "^3.0.0"
+    "cross-fetch": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "devDependencies": {
-    "@types/jest": "25.2.3",
-    "@types/isomorphic-fetch": "0.0.35",
-    "@types/node": "13.11.0",
-    "jest": "25.2.7",
-    "ts-jest": "25.3.1",
-    "typescript": "3.9.3"
+    "@types/jest": "^27.0.3",
+    "@types/node": "^18",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "test": "jest",
